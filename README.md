@@ -21,8 +21,9 @@ les performances chutent.
 Un fichier Makefile permet de générer les exécutables pour les deux codes principaux. Il suffit d'exécuter les commandes suivantes:
 *cmake .* et *make*
 
-Deux exécutables sont donc générés et peuvent être exécutés : *./kmean_par* ou *./kmean_seq* respectivement pour
-le code *CUDA* et *CPU*
+Deux exécutables sont donc générés et peuvent être exécutés : 
+*./kmean_par* ou *./kmean_seq* 
+respectivement pour le code *CUDA* et *CPU*
 
 ## Réalisé par Kossi Robert M. 
 ## Implémentation inspirée du projet *thrust* de *NVIDIA*, métrique de *Davies-Bouldin index* 
