@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 CMakeFiles/kmeans_seq.dir/kmeans_sequential.cpp.o -o kmeans_seq 

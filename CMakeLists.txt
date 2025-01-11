@@ -1,22 +1,19 @@
-cmake_minimum_required(VERSION 3.28)
-project(kmeans_mnist)
+cmake_minimum_required(VERSION 3.10)
+project(KMeans LANGUAGES CXX CUDA)
+
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 enable_language(CUDA)
+set(CMAKE_CUDA_STANDARD 14)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 
-# Rechercher les bibliothèques nécessaires
-FIND_PACKAGE(CURL REQUIRED)
-FIND_PACKAGE(ZLIB REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -O3")
 
-# Inclure les répertoires nécessaires
-INCLUDE_DIRECTORIES(${CURL_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIRS})
-SET(CMAKE_CXX_STANDARD 17)
+add_executable(kmeans_seq kmeans_sequential.cpp)
+add_executable(kmeans_par kmeans_parallel.cu)
 
-# Spécifiez les fichiers sources
-file(GLOB hdr *.hpp *.h)
-file(GLOB cu *.cu)
-SET(kmeans_files kmeans_cuda.cu mnist_main.cpp)
-
-# Créer l'exécutable
-ADD_EXECUTABLE(kmeans_mnist ${kmeans_files} ${hdr} ${cu})
-
-# Lier les bibliothèques nécessaires
-TARGET_LINK_LIBRARIES(kmeans_mnist ${CURL_LIBRARIES} ${ZLIB_LIBRARIES})
+set_target_properties(kmeans_par PROPERTIES
+    CUDA_SEPARABLE_COMPILATION ON)
