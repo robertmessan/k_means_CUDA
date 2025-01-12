@@ -142,6 +142,19 @@ kmeans_par/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kmeans_par.dir/build.make CMakeFiles/kmeans_par.dir/build
 .PHONY : kmeans_par/fast
 
+#=============================================================================
+# Target rules for targets named shared_kmeans_par
+
+# Build rule for target.
+shared_kmeans_par: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shared_kmeans_par
+.PHONY : shared_kmeans_par
+
+# fast build rule for target.
+shared_kmeans_par/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_kmeans_par.dir/build.make CMakeFiles/shared_kmeans_par.dir/build
+.PHONY : shared_kmeans_par/fast
+
 kmeans_parallel.o: kmeans_parallel.cu.o
 .PHONY : kmeans_parallel.o
 
@@ -190,6 +203,30 @@ kmeans_sequential.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kmeans_seq.dir/build.make CMakeFiles/kmeans_seq.dir/kmeans_sequential.cpp.s
 .PHONY : kmeans_sequential.cpp.s
 
+shared_kmeans_par.o: shared_kmeans_par.cu.o
+.PHONY : shared_kmeans_par.o
+
+# target to build an object file
+shared_kmeans_par.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_kmeans_par.dir/build.make CMakeFiles/shared_kmeans_par.dir/shared_kmeans_par.cu.o
+.PHONY : shared_kmeans_par.cu.o
+
+shared_kmeans_par.i: shared_kmeans_par.cu.i
+.PHONY : shared_kmeans_par.i
+
+# target to preprocess a source file
+shared_kmeans_par.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_kmeans_par.dir/build.make CMakeFiles/shared_kmeans_par.dir/shared_kmeans_par.cu.i
+.PHONY : shared_kmeans_par.cu.i
+
+shared_kmeans_par.s: shared_kmeans_par.cu.s
+.PHONY : shared_kmeans_par.s
+
+# target to generate assembly for a file
+shared_kmeans_par.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_kmeans_par.dir/build.make CMakeFiles/shared_kmeans_par.dir/shared_kmeans_par.cu.s
+.PHONY : shared_kmeans_par.cu.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -200,12 +237,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... kmeans_par"
 	@echo "... kmeans_seq"
+	@echo "... shared_kmeans_par"
 	@echo "... kmeans_parallel.o"
 	@echo "... kmeans_parallel.i"
 	@echo "... kmeans_parallel.s"
 	@echo "... kmeans_sequential.o"
 	@echo "... kmeans_sequential.i"
 	@echo "... kmeans_sequential.s"
+	@echo "... shared_kmeans_par.o"
+	@echo "... shared_kmeans_par.i"
+	@echo "... shared_kmeans_par.s"
 .PHONY : help
 
 

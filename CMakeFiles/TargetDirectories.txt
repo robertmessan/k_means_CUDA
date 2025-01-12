@@ -1,4 +1,5 @@
 /array/shared/home/kmessan/k_means_CUDA/CMakeFiles/kmeans_seq.dir
 /array/shared/home/kmessan/k_means_CUDA/CMakeFiles/kmeans_par.dir
+/array/shared/home/kmessan/k_means_CUDA/CMakeFiles/shared_kmeans_par.dir
 /array/shared/home/kmessan/k_means_CUDA/CMakeFiles/edit_cache.dir
 /array/shared/home/kmessan/k_means_CUDA/CMakeFiles/rebuild_cache.dir
